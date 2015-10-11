@@ -90,7 +90,10 @@ reports
 ### build files not needed
 build/
 
-### bootstrap font files
+### generated files that shouldn't be included
+src/css/
+
+### framework files brought in by bower
 src/fonts/bootstrap/
 src/js/libs/
 

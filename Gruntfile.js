@@ -1,4 +1,5 @@
 module.exports = function(grunt) {
+    'use strict';
 
     var jsFiles = ['Gruntfile.js', 'testserver.js', 'src/**/*.js', 'test/**/*.js'];
 
@@ -126,7 +127,7 @@ module.exports = function(grunt) {
             },
             production: {
                 options: {
-                    sassDir: 'build/scss',
+                    sassDir: 'src/scss',
                     cssDir: 'build/css',
                     sourcemap: false,
                     outputStyle: 'compressed',
@@ -219,7 +220,7 @@ module.exports = function(grunt) {
                                 'compass:production',
                                 'clean:buildChildren',
                                 'requirejs:compile']);
-    grunt.registerTask('launchSrc', ['concurrent:src']);
+    grunt.registerTask('launchSrc', ['compass:dev','concurrent:src']);
     grunt.registerTask('launchBuild', ['build','concurrent:build']);
     grunt.registerTask('launchPlato', ['plato','open:plato']);
     grunt.registerTask('default', ['test']);
