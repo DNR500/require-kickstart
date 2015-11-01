@@ -160,7 +160,7 @@ module.exports = function(grunt) {
                 app: 'Google Chrome'
             },
             build : {
-                path: 'http://127.0.0.1:4789',
+                path: 'http://127.0.0.1:4788',
                 app: 'Google Chrome'
             },
             plato : {
@@ -170,10 +170,13 @@ module.exports = function(grunt) {
         },
         nodemon: {
             src: {
-                script: 'serversrc.js'
+                script: 'server.js'
             },
             build: {
-                script: 'serverbuild.js'
+                script: 'server.js',
+                options: {
+                    args: ['/build']
+                }
             }
         },
         concurrent: {
