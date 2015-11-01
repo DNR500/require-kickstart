@@ -1,8 +1,6 @@
 module.exports = function(grunt) {
     'use strict';
 
-    var jsFiles = ['Gruntfile.js', 'testserver.js', 'src/**/*.js', 'test/**/*.js'];
-
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
@@ -24,7 +22,7 @@ module.exports = function(grunt) {
         },
 
         jshint: {
-            files: jsFiles
+            files: ['Gruntfile.js', 'testserver.js', 'src/**/*.js', 'test/**/*.js']
         },
         karma: {
             unit: {
@@ -192,10 +190,6 @@ module.exports = function(grunt) {
                     logConcurrentOutput: true
                 }
             }
-        },
-        watch: {
-            files: jsFiles,
-            tasks: ['test']
         }
     });
 
