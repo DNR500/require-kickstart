@@ -15,13 +15,10 @@ function setResponse(res, content){
     res.status(200).end();
 }
 
-//Create server
 var app = express();
 app.use(bodyParser.json());
 app.use(express.static(__dirname + serverDirectory));
 
-// http....
-//Start server
 var port = 4788;
 var ip = "127.0.0.1"; // change to your machines ip for other devices to access
 app.listen( port, ip, function() {
